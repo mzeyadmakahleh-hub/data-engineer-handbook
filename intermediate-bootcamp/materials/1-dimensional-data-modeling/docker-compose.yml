@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:14
+    image: postgres:latest
     restart: on-failure
     container_name: ${DOCKER_CONTAINER}
     env_file:
@@ -17,7 +17,7 @@ services:
       - ./scripts/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
       - postgres-data:/var/lib/postgresql/data
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:latest
     restart: on-failure
     container_name: pgadmin
     environment:
